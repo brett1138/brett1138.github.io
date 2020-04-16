@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+   /* set up for parallax scrolling */
+html {
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: 'DejaVu Sans Mono', monospace;
+}
+.custom-padding {
+    padding-top: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+nav {
+    position: sticky;
+    top: 0;
+    padding: 10px 20px 10px 10px;
+    text-align: right;
+    z-index: 1;
+    background: #2A4C5B;
+    margin: 0 auto;
+    width: calc(100% - 60px); 
+}
+.menu-area {
+
+}
+.menu-area li {
+    list-style: none;
+    display: inline-block;
+}
+.menu-area li a {
+    text-decoration: none;
+    color: #FDFCFB;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 25px;
+    font-size: 14px;
+    line-height: 30px;
+    position: relative;
+    z-index: 1;
+}
+.logo {
+    width: 15%;
+    float: left;
+    text-transform: uppercase;
+    color: #FDFCFB;
+    font-size: 25px;
+    text-align: left;
+    padding-left: 2%;
+}
+.menu-area li a:hover{
+    background: #FDFCFB;
+    border-radius: 0.5rem;
+    color: #2A4C5B;
+}
+nav:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 100%;
+    border-top: 10px solid #E7DCC9;
+    border-right: 10px solid #E7DCC9;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+nav:after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 100%;
+    border-top: 10px solid #E7DCC9;
+    border-left: 10px solid #E7DCC9;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+main {
+    margin-bottom: 0.3rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.section .lefthead {
+    float: left;
+    text-align: right;
+    margin: 0 2rem 0 0;
+}
+.section img {
+    float: right;
+    text-align: left;
+    margin: 0 0 0 2rem;
+    border-radius: 2rem;
+}
+.section h1 {
+    margin-top: 3rem;
+}
+.section h1, p {
+    background-color: #2A4C5B;
+    color: #E7DCC9;
+    padding: 0 10px;
+    border-radius: 0.5rem;
+}
+.section p {
+    margin-top: 0.5rem;
+}
+.section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.parallax-wrapper {
+    transform-style: preserve-3d;
+    width: 100vw;
+    height: 120vh;
+    padding-top: 5vh;
+    box-sizing: border-box;
+}
+.regular-wrapper {
+    width: 100vw;
+    height: 140vh;
+    padding-top: 20px;
+    background-image: url("../img/brightsky_edited_big.png");
+    z-index: 2;
+    position: relative;
+}
+.content-parallax {
+    margin: 20px auto;
+    border-radius: 2rem;
+    padding: 50px;
+    width: 60%;
+    z-index: 5;
+    background: #2A4C5B;
+    opacity: 80%;
+}
+.content-regular p {
+    background: #73817D;
+    margin: 20px auto;
+    border-radius: 2rem;
+    padding: 50px;
+    width: 60%;
+    z-index: 5; 
+}
+.parallax-wrapper::before {
+    content:"";
+    width: 100vw;
+    height: 130vh;
+    top:0;
+    left:0;
+    background-image: url("../img/brett_at_work.png");
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2);
+}
